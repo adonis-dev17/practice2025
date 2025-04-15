@@ -7,8 +7,82 @@
   </head>
   <body>
     <script>
+      /*
       console.log(true && true);
       console.log(0.2 >= 0 && 0.2 <= 1);
+
+      //Truthy//
+      let cartQuantity = 5;
+
+      if (cartQuantity) {
+        console.log("cart has products");
+      }
+
+      //Falsy//
+      let cartQuantityFalsy = 0;
+
+      if (cartQuantityFalsy) {
+        console.log("cart has products");
+      }
+
+      //Truthy//
+      console.log(!0);
+
+      //Falsy//
+      console.log("text" / 5);
+      //Note: Falsy values like 0, NaN, Undefined, and ''.//
+      */
+
+      //###################################x#############################//
+
+      //1. Ternary ?: Operator is an if-else statement shortcut//
+
+      let result = true ? "Truthy" : "Falsy";
+      console.log(result);
+      //is the same as below//
+
+      let result2;
+      if (true) {
+        result2 = "Truthy";
+      } else {
+        result2 = "Falsy";
+      }
+      console.log(result2);
+
+      //2. Guard Operator && is also an if-else statement shortcut //
+      false && console.log("hello"); //This stops or short circuits the code early. It is the same as if statement below//
+
+      /*if (condition) {
+        console.log("hello");
+      } 
+      */
+
+      //This will stop early and not display 'hello'//
+      const message = false && "hello";
+      console.log(message);
+
+      //This will not stop and will display 'hello'//
+      const message1 = 5 && "hello";
+      console.log(message1);
+
+      //3. OR Operator or The Default Operator || also stops early or short circuits//
+
+      let currency = "EUR" || "USD";
+      console.log(currency);
+
+      //but//
+
+      let currency2 = undefined || "USD";
+      console.log(currency2);
+
+      //is the same as//
+      let currency;
+
+      /*
+      if (!condition) {
+        console.log('USD');
+      }
+      */
     </script>
   </body>
 </html>
