@@ -85,7 +85,12 @@
     <button
       onclick="
     quantity--;
-    console.log(`Cart quantity: ${quantity}`)
+    if (quantity < 0) {
+        console.log('Not enough items in the cart');
+        quantity++;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
     "
     >
       Remove from cart
@@ -93,7 +98,12 @@
     <button
       onclick="
     quantity -= 2;
-    console.log(`Cart quantity: ${quantity}`)
+    if (quantity < 0) {
+        console.log('Not enough items in the cart');
+        quantity += 2;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
     "
     >
       -2
@@ -101,7 +111,12 @@
     <button
       onclick="
     quantity -= 3;
-    console.log(`Cart quantity: ${quantity}`)
+    if (quantity < 0) {
+        console.log('Not enough items in the cart');
+        quantity +=3;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
     "
     >
       -3
