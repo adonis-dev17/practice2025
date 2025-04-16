@@ -15,8 +15,16 @@
     </button>
     <button
       onclick="
+      
       quantity++;
-    console.log(`Cart quantity: ${quantity}`);
+
+      if (quantity > 10) {
+        console.log('The cart is full');
+        quantity--;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
+    
     "
     >
       Add to Cart
@@ -24,7 +32,13 @@
     <button
       onclick="
     quantity += 2;
-    console.log(`Cart quantity: ${quantity}`);
+
+    if (quantity > 10) {
+        console.log('The cart is full');
+        quantity -= 2;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
     "
     >
       +2
@@ -32,7 +46,12 @@
     <button
       onclick="
     quantity += 3;
-    console.log(`Cart quantity: ${quantity}`);
+    if (quantity > 10) {
+        console.log('The cart is full');
+        quantity -= 3;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
     "
     >
       +3
@@ -40,7 +59,12 @@
     <button
       onclick="
     quantity += 4;
-    console.log(`Cart quantity: ${quantity}`)
+    if (quantity > 10) {
+        console.log('The cart is full');
+        quantity -= 4;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
     "
     >
       +4
@@ -48,7 +72,12 @@
     <button
       onclick="
     quantity += 5;
-    console.log(`Cart quantity: ${quantity}`)
+    if (quantity > 10) {
+        console.log('The cart is full');
+        quantity -= 5;
+      } else {
+        console.log(`Cart quantity: ${quantity}`);
+      }
     "
     >
       +5
