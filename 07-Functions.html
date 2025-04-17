@@ -10,6 +10,7 @@
       /*A Function lets us reuse code*/
 
       /*Example1*/
+
       function function1() {
         console.log("hello");
         console.log(2 + 2);
@@ -19,6 +20,15 @@
 
       function1();
       function1();
+
+      /*Parameter puts a value into a function*/
+
+      function computeTax(cost, tax = 0.1) {
+        console.log(cost * tax);
+      }
+
+      computeTax(1000, 0.2);
+      computeTax(2000);
     </script>
   </body>
 </html>

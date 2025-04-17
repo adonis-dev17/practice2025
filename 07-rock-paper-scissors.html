@@ -8,24 +8,8 @@
   <body>
     <button
       onclick="
-
-      /*First, call a function pickComputerMove*/
-      /*Then, assign to a variable computerMove*/
-      const computerMove = pickComputerMove();
-
-
-      //2. Compare the moves to get the result//
-      let result = '';
-      if (computerMove === 'Rock') {
-        result = 'Tie.'
-      } else if (computerMove === 'Paper') {
-        result = 'You lose.';
-      } else if (computerMove === 'Scissors') {
-        result = 'You win!'
-      }
-
-      //3. Display the result in a popup//
-      alert (`You picked Rock. Computer picked ${computerMove}. ${result}`);
+      /*call playGame with parameter*/
+      playGame('Rock');
       "
     >
       Rock
@@ -33,23 +17,8 @@
 
     <button
       onclick="
-      /*First, call a function pickComputerMove*/
-      /*Then, assign to a variable computerMove*/
-      const computerMove = pickComputerMove();
-
-
-      //2. Compare the moves to get the result//
-      let result = '';
-      if (computerMove === 'Rock') {
-        result = 'You win!'
-      } else if (computerMove === 'Paper') {
-        result = 'Tie.';
-      } else if (computerMove === 'Scissors') {
-        result = 'You lose.'
-      }
-
-      //3. Display the result in a popup//
-      alert (`You picked Paper. Computer picked ${computerMove}. ${result}`);
+       /*call playGame with parameter*/
+      playGame('Paper');
     "
     >
       Paper
@@ -57,27 +26,54 @@
 
     <button
       onclick="
-      /*First, call a function pickComputerMove*/
-      /*Then, assign to a variable computerMove*/
-      const computerMove = pickComputerMove();
-
-      //2. Compare the moves to get the result//
-      let result = '';
-      if (computerMove === 'Rock') {
-        result = 'You lose.'
-      } else if (computerMove === 'Paper') {
-        result = 'You win!';
-      } else if (computerMove === 'Scissors') {
-        result = 'Tie.'
-      }
-
-      //3. Display the result in a popup//
-      alert (`You picked Scissors. Computer picked ${computerMove}. ${result}`);
+       /*call playGame with parameter*/
+      playGame('Scissors');
     "
     >
       Scissors
     </button>
     <script>
+      /*playGame uses parameters to group almost the same codes*/
+      function playGame(playerMove) {
+        /*First, call a function pickComputerMove*/
+        /*Then, assign to a variable computerMove*/
+        const computerMove = pickComputerMove();
+
+        //2. Compare the moves to get the result//
+        let result = "";
+
+        if (playerMove === "Scissors") {
+          if (computerMove === "Rock") {
+            result = "You lose.";
+          } else if (computerMove === "Paper") {
+            result = "You win!";
+          } else if (computerMove === "Scissors") {
+            result = "Tie.";
+          }
+        } else if (playerMove === "Paper") {
+          if (computerMove === "Rock") {
+            result = "You win!";
+          } else if (computerMove === "Paper") {
+            result = "Tie.";
+          } else if (computerMove === "Scissors") {
+            result = "You lose.";
+          }
+        } else if (playerMove === "Rock") {
+          if (computerMove === "Rock") {
+            result = "Tie.";
+          } else if (computerMove === "Paper") {
+            result = "You lose.";
+          } else if (computerMove === "Scissors") {
+            result = "You win!";
+          }
+        }
+
+        //3. Display the result in a popup//
+        alert(
+          `You picked ${playerMove}. Computer picked ${computerMove}. ${result}`
+        );
+      }
+
       function pickComputerMove() {
         //1. Computer randomly selects a move//
         const randomNumber = Math.random();
