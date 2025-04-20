@@ -8,12 +8,28 @@
   <body>
     <script>
       function convertLength(length, from, to) {
-        let newLength = length;
+        let newLength;
+
+        if (from !== "miles" || from !== "km" || from !== "ft") {
+          //console.log(`Invalid unit ${from} to ${to}`);
+          return `Invalid unit ${from}`;
+        } else if (to !== "miles" || to !== "km" || to !== "ft") {
+          //console.log(`Invalid unit ${from} to ${to}`);
+          return `Invalid unit ${to}`;
+        }
 
         if (from === "miles" && to === "km") {
-          newLength * 1.6;
+          newLength = length * 1.6;
         } else if (from === "km" && to === "miles") {
-          newLength / 1.6;
+          newLength = length / 1.6;
+        } else if (from === "miles" && to === "ft") {
+          newLength = length * 5280;
+        } else if (from === "ft" && to === "miles") {
+          newLength = length / 5280;
+        } else if (from === "km" && to === "ft") {
+          newLength = length * 3281;
+        } else if (from === "ft" && to === "km") {
+          newLength = length / 3281;
         }
         console.log(`${newLength} ${to}`);
       }
@@ -22,6 +38,13 @@
       convertLength(32, "km", "miles");
       convertLength(50, "km", "km");
       convertLength(100, "miles", "miles");
+      convertLength(5, "miles", "km");
+      convertLength(5, "miles", "ft");
+      convertLength(5, "km", "ft");
+      convertLength(3, "ft", "km");
+      convertLength(3, "ft", "miles");
+      console.log(convertLength(5, "lbs", "lbs"));
+      console.log(convertLength(5, "ft", "inch"));
     </script>
   </body>
 </html>
