@@ -114,19 +114,26 @@
       </button>
       <button
         onclick="
-        updateCalculation('=');
+        calculation = eval(calculation);
+        console.log(calculation);
       
       "
       >
         =
       </button>
-      <button>/</button>
+      <button
+        onclick="
+      updateCalculation('/');
+      "
+      >
+        /
+      </button>
     </p>
     <p>
       <button
         onclick="
-
-      updateCalculation('');
+      calculation = '';
+      console.log(calculation);
       
       "
       >
@@ -137,55 +144,8 @@
       let calculation = "";
 
       function updateCalculation(key) {
-        if (key === "") {
-          calculation = "";
-          console.log(calculation);
-        } else if (key === "=") {
-          calculation = eval(calculation);
-          console.log(calculation);
-        } else if (key === ".") {
-          calculation += ".";
-          console.log(calculation);
-        } else if (key === "0") {
-          calculation += "0";
-          console.log(calculation);
-        } else if (key === "*") {
-          calculation += "*";
-          console.log(calculation);
-        } else if (key === "9") {
-          calculation += "9";
-          console.log(calculation);
-        } else if (key === "8") {
-          calculation += "8";
-          console.log(calculation);
-        } else if (key === "7") {
-          calculation += "7";
-          console.log(calculation);
-        } else if (key === "-") {
-          calculation += "-";
-          console.log(calculation);
-        } else if (key === "6") {
-          calculation += "6";
-          console.log(calculation);
-        } else if (key === "5") {
-          calculation += "5";
-          console.log(calculation);
-        } else if (key === "4") {
-          calculation += "4";
-          console.log(calculation);
-        } else if (key === "+") {
-          calculation += "+";
-          console.log(calculation);
-        } else if (key === "3") {
-          calculation += "3";
-          console.log(calculation);
-        } else if (key === "2") {
-          calculation += "2";
-          console.log(calculation);
-        } else if (key === "1") {
-          calculation += "1";
-          console.log(calculation);
-        }
+        calculation += key;
+        console.log(calculation);
       }
     </script>
   </body>
