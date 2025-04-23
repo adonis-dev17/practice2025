@@ -81,17 +81,18 @@
       let quantity = 0;
 
       function updateCartQuantity(quan) {
-        quantity = quantity + quan;
-
-        if (quantity > 10) {
-          console.log("The cart is full");
-          quantity = quantity - quan;
-        } else if (quantity < 0) {
-          console.log("Not enough items in the cart");
-          quantity = quantity - quan;
-        } else {
-          console.log(`Cart quantity: ${quantity}`);
+        if (quantity + quan > 10) {
+          alert(`The cart is full`);
+          return;
         }
+
+        if (quantity + quan < 0) {
+          alert(`Not enough items in the cart`);
+          return;
+        }
+
+        quantity += quan;
+        console.log(`Cart quantity: ${quantity}`);
       }
     </script>
   </body>
