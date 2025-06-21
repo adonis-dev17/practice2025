@@ -13,15 +13,15 @@
       };
 
       console.log(product);
-      console.log(typeof product);
+
+      console.log(product.name);
 
       product.name = "new socks";
+      product.newProperty = "true";
+
       console.log(product);
 
-      product.color = "white";
-      console.log(product);
-
-      delete product.color;
+      delete product.newProperty;
       console.log(product);
     </script>
   </body>
