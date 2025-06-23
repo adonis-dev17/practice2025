@@ -25,7 +25,7 @@
       delete product.newProperty;
       console.log(product);
       */
-
+      /*
       const product2 = {
         name: "shirt",
         "delivery-time": 7,
@@ -50,6 +50,34 @@
       const jsonString = JSON.stringify(product2);
 
       console.log(JSON.parse(jsonString));
+      */
+
+      /*Autoboxing*/
+      console.log("hello".length);
+      console.log("hello".toUpperCase());
+
+      /*Copy by reference*/
+      const object1 = {
+        message: "hello",
+      };
+
+      const object2 = object1;
+
+      console.log(object1);
+      console.log(object2);
+
+      object1.message = "Goodbye!";
+
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: "Goodbye!",
+      };
+
+      /*Objects Compare Refeences NOT Values*/
+      console.log(object3 === object1);
+      console.log(object1 === object2);
     </script>
   </body>
 </html>
